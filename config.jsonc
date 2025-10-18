@@ -1,0 +1,161 @@
+{
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  /* === Modules Order === */
+  "modules-left": [
+    "custom/archicon",
+    "niri/workspaces",
+    "cpu",
+    "memory",
+    "disk",
+    "battery",
+    "power-profiles-daemon",
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "idle_inhibitor",
+    "pulseaudio",
+    "backlight",
+    "network"
+  ],
+  /* === Modules Left === */
+  "custom/archicon": {
+    "format": "󰣇",
+    "on-click": "~/.config/niri/power-menu.sh",
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "Asia/Shanghai",
+    "format": "{:%m-%d%a󰥔 %p %I:%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "on-click": "missioncenter",
+    "tooltip": true,
+    "tooltip-format": "Uso de CPU: {usage}%\nNúcleos: {cores}"
+  },
+  "memory": {
+    "format": "{}% 󰍛",
+    "on-click": "missioncenter",
+    "tooltip": true,
+    "tooltip-format": "RAM en uso: {used} / {total} ({percentage}%)"
+  },
+  "disk": {
+    "format": "{percentage_free}%  ",
+    "on-click": "missioncenter",
+    "tooltip": true,
+    "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
+  },
+  /* === Modules Center === */
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "󱓼",
+      "active": "󱓻"
+    },
+    "persistent-workspaces": {
+      "*": 2
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 21,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+  /* === Modules Right === */
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+    },
+  "battery": {
+    "bat": "BAT1",
+    "interval": 20,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+  },
+  "power-profiles-daemon": {
+    "format": "{icon} ",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑","󱩒", "󱩓","󱩔","󱩕", "󱩖","󰛨"]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+	""
+      ]
+    }
+  },
+  /*"network": {
+    "format": "{ifname}",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },*/
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{essid} {icon}  {bandwidthTotalBytes} 󱪕 ",
+    "format-icons": ["󱛅","󱚵","󱛂","󰖩","󱛃","󱚽"],
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗  {bandwidthTotalBytes} 󱪕 ",
+    "format-disconnected": "󰖪", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}  ",
+    "tooltip-format-disconnected": "Disconnected ",
+    "on-click": "ghostty -e nmtui",
+    "interval": 2,
+    "max-length": 50
+  }
+}
