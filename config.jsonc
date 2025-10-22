@@ -154,7 +154,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname}  ",
     "tooltip-format-disconnected": "Disconnected ",
-    "on-click": "ghostty -e nmtui",
+    "on-click": "nm-connection-editor",
     "interval": 2,
     "max-length": 50
   }
