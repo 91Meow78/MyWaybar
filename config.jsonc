@@ -35,7 +35,7 @@
   },
   "clock": {
     "timezone": "Asia/Shanghai",
-    "format": "{:%m-%d%a󰥔 %p %I:%M}",
+    "format": "{:%m-%d%a %H:%M}",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month"
@@ -131,9 +131,10 @@
       "default": [
         "",
         "",
-	""
+	      ""
       ]
-    }
+    },
+    "on-click": "pavucontrol"
   },
   /*"network": {
     "format": "{ifname}",
