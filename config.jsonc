@@ -25,6 +25,7 @@
     "idle_inhibitor",
     "pulseaudio",
     "backlight",
+    "custom/wallpaper",
     "network"
   ],
   /* === Modules Left === */
@@ -158,5 +159,10 @@
     "on-click": "nm-connection-editor",
     "interval": 2,
     "max-length": 50
+  },
+  "custom/wallpaper": {
+    "format": "",
+    "on-click": "waypaper",
+    "tooltip": "Change the wallpaper"
   }
 }
