@@ -15,7 +15,8 @@
     "disk",
     "battery",
     "power-profiles-daemon",
-    "wlr/taskbar"
+    /*"wlr/taskbar"*/
+    "niri/window"
   ],
   "modules-center": [
     "clock"
@@ -59,6 +60,12 @@
     "on-click": "missioncenter",
     "tooltip": true,
     "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
+  },
+  "niri/window": {
+    "format": "{app_id}",
+    "swap-icon-label": false, 
+    "icon-size": 21,
+    "icon": true
   },
   /* === Modules Center === */
   "niri/workspaces": {
