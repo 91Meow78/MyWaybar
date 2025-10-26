@@ -41,7 +41,6 @@ window#waybar.hidden {
 #custom-archicon,
 #cpu,
 #network,
-#battery,
 #idle_inhibitor {
   margin-left: 5px;
   border-top-left-radius: 5px;
@@ -51,10 +50,10 @@ window#waybar.hidden {
 /* Separation to the right */
 #custom-archicon,
 #clock,
-#custom-wallpaper,
-#power-profiles-daemon,
-#network,
-#disk {
+#disk,
+
+#backlight,
+#network {
   margin-right: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -88,6 +87,7 @@ window#waybar.hidden {
 #disk {
   color: #a6e3bb;
   background: #181825;
+  padding-right: 19px;
 }
 
 
@@ -151,7 +151,8 @@ window#waybar.hidden {
 
 #power-profiles-daemon {
   color: #fab387;
-  background: #181825
+  background: #181825;
+  padding-right: 8px;
 }
 
 #idle_inhibitor {
@@ -170,12 +171,13 @@ window#waybar.hidden {
 #backlight {
   color: #89dceb;
   background: #181825;
+  padding-right: 19px;
 }
 
 #custom-wallpaper {
   color: #94e2d5;
   background: #181825;
-  padding-right: 19px;
+  padding-right: 13px;
 }
 
 #network {
