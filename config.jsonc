@@ -10,15 +10,15 @@
     "gtk-layer-shell": true,
     /* === Modules Order === */
     "modules-left": [
-      /*"custom/archicon",*/
+      "custom/archicon",
       "niri/workspaces",
-      "network"
+      "niri/window"
       /*
       "power-profiles-daemon",
       "wlr/taskbar"*/
     ],
     "modules-center": [
-      "niri/window"
+      "clock"
     ],
     "modules-right": [
       /* "tray", 
@@ -37,6 +37,12 @@
       "on-click": "~/.config/niri/power-menu.sh",
       "tooltip": false
     },
+    "niri/window": {
+      "format": "{app_id}",
+      "swap-icon-label": false, 
+      "icon-size": 26,
+      "icon": true
+    },
     "cpu": {
       "format": "{usage}% ",
       "on-click": "missioncenter",
@@ -54,12 +60,6 @@
       "on-click": "missioncenter",
       "tooltip": true,
       "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
-    },
-    "niri/window": {
-      "format": "{app_id}",
-      "swap-icon-label": false, 
-      "icon-size": 26,
-      "icon": true
     },
     /* === Modules Center === */
     "niri/workspaces": {
@@ -147,19 +147,13 @@
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
     },*/
-    "network": {
-      "format": "{ifname}",
-      "format-wifi": "{essid} {icon}  {bandwidthTotalBytes} 󱪕 ",
-      "format-icons": ["󱛅","󱚵","󱛂","󰖩","󱛃","󱚽"],
-      "format-ethernet": "{ipaddr}/{cidr} 󰊗  {bandwidthTotalBytes} 󱪕 ",
-      "format-disconnected": "󰖪", //An empty format will hide the module.
-      "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-      "tooltip-format-ethernet": "{ifname}  ",
-      "tooltip-format-disconnected": "Disconnected ",
-      "on-click": "nm-connection-editor",
-      "interval": 2,
-      "max-length": 50
+    "clock": {
+      "timezone": "Asia/Shanghai",
+      "format": "{:%m-%d%a %H:%M}",
+      "tooltip-format": "{calendar}",
+      "calendar": {
+        "mode": "month"
+      }
     },
     "custom/wallpaper": {
       "format": "",
@@ -178,13 +172,11 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "modules-left": [
+      "network"
 
-      "custom/archicon",
-      "clock"
     ],
 
     "modules-center": [
-      "wlr/taskbar"
     ],
 
     "modules-right": [
@@ -202,7 +194,7 @@
       "on-click": "~/.config/niri/power-menu.sh",
       "tooltip": false
     },
-    "wlr/taskbar": {
+   /* "wlr/taskbar": {
       "format": "{icon}",
       "icon-size": 26,
       "active-first": true,
@@ -212,7 +204,7 @@
       "ignore-list": [
         "rofi"
       ]
-    },
+    },*/
     "backlight": {
       "device": "intel_backlight",
       "format": "{percent}% {icon}",
@@ -258,13 +250,19 @@
       "format-icons": ["", "", "", "", ""],
       "max-length": 25
     },
-    "clock": {
-      "timezone": "Asia/Shanghai",
-      "format": "{:%m-%d%a %H:%M}",
-      "tooltip-format": "{calendar}",
-      "calendar": {
-        "mode": "month"
-      }
+    "network": {
+      "format": "{ifname}",
+      "format-wifi": "{essid} {icon}  {bandwidthTotalBytes} 󱪕 ",
+      "format-icons": ["󱛅","󱚵","󱛂","󰖩","󱛃","󱚽"],
+      "format-ethernet": "{ipaddr}/{cidr} 󰊗  {bandwidthTotalBytes} 󱪕 ",
+      "format-disconnected": "󰖪", //An empty format will hide the module.
+      "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+      "tooltip-format-ethernet": "{ifname}  ",
+      "tooltip-format-disconnected": "Disconnected ",
+      "on-click": "nm-connection-editor",
+      "interval": 2,
+      "max-length": 50
     },
     "power-profiles-daemon": {
       "format": "{icon} ",
