@@ -1,7 +1,7 @@
 /* -- Global rules -- */
 * {
   border: none;
-  font-family: "UbuntuMono Nerd Font";
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 19px;
   min-height: 10px;
 }
@@ -43,8 +43,8 @@ window#waybar.hidden {
 #network,
 #idle_inhibitor {
   margin-left: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 /* Separation to the right */
@@ -55,8 +55,8 @@ window#waybar.hidden {
 #backlight,
 #network {
   margin-right: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 /* -- Specific styles -- */
@@ -71,21 +71,21 @@ window#waybar.hidden {
 
 #clock {
   background: #181825;
-  color: #cdd6f4;
+  color: #a6e3a1;
 }
 
 #cpu {
   background: #181825;
-  color: #89dceb;
+  color: #94e2d5;
 }
 
 #memory {
   background: #181825;
-  color: #94e2d5;
+  color: #89dceb;
 }
 
 #disk {
-  color: #a6e3bb;
+  color: #89b4fa;
   background: #181825;
   padding-right: 19px;
 }
@@ -145,7 +145,7 @@ window#waybar.hidden {
 }
 
 #battery {
-  color: #f9e2af;
+  color: #74c7ec;
   background: #181825; 
 }
 

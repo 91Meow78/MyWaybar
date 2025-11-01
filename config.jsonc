@@ -45,19 +45,19 @@
     },
     "cpu": {
       "format": "{usage}% ",
-      "on-click": "missioncenter",
+      "on-click": "kitty -e btop",
       "tooltip": true,
       "tooltip-format": "Uso de CPU: {usage}%\nNúcleos: {cores}"
     },
     "memory": {
       "format": "{}% 󰍛",
-      "on-click": "missioncenter",
+      "on-click": "kitty -e btop",
       "tooltip": true,
       "tooltip-format": "RAM en uso: {used} / {total} ({percentage}%)"
     },
     "disk": {
       "format": "{percentage_free}% ",
-      "on-click": "missioncenter",
+      "on-click": "kitty -e btop",
       "tooltip": true,
       "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
     },
@@ -101,7 +101,8 @@
       "format": "{capacity}% {icon}",
       "format-charging": "{capacity}% ",
       "format-icons": ["", "", "", "", ""],
-      "max-length": 25
+      "max-length": 25,
+      "on-click": "kitty -e btop"
     },
     "power-profiles-daemon": {
       "format": "{icon} ",
